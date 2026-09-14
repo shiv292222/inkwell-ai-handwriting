@@ -1,0 +1,32 @@
+{
+  "name": "inkwell",
+  "version": "1.0.0",
+  "description": "Create private handwritten PDF, Word, and PNG notes through a CLI, MCP tool, or optional browser preview.",
+  "author": {
+    "name": "shiv292222",
+    "url": "https://github.com/shiv292222"
+  },
+  "homepage": "https://github.com/shiv292222/inkwell-ai-handwriting",
+  "repository": "https://github.com/shiv292222/inkwell-ai-handwriting",
+  "license": "MIT",
+  "keywords": ["handwriting", "notes", "pdf", "docx", "privacy", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Inkwell",
+    "shortDescription": "Handwritten PDF and Word notes",
+    "longDescription": "Turn typed notes into polished handwritten PDF, Word, or PNG pages locally. Includes measured collision-safe layout, deterministic variation, pagination, agent tooling, and no cloud upload.",
+    "developerName": "shiv292222",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "Turn these notes into ruled handwritten pages",
+      "Create a neat handwritten PDF from this text",
+      "Export these notes as a handwritten Word document",
+      "Render my notes privately with a reproducible style"
+    ],
+    "brandColor": "#173B32",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg"
+  }
+}

@@ -1,0 +1,9 @@
+interface:
+  display_name: "Create Handwritten Notes"
+  short_description: "Render private handwritten pages from text"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#173B32"
+  default_prompt: "Use $create-handwritten-notes to turn my text into private ruled handwriting pages."
+policy:
+  allow_implicit_invocation: true

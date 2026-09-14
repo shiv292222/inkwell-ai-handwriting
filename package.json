@@ -1,0 +1,21 @@
+{
+  "name": "inkwell-ai-handwriting",
+  "version": "1.0.0",
+  "description": "Local typed-notes to handwritten PDF, Word, and PNG documents, with CLI, MCP, and Codex skill.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "inkwell": "./bin/inkwell.py",
+    "inkwell-mcp": "./mcp/server.py"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test",
+    "test:python": "node scripts/run-python-tests.mjs",
+    "check": "node --check src/core/engine.js && node --check src/app.js && npm test && npm run test:python"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

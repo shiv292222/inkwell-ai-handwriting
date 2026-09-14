@@ -1,0 +1,10 @@
+{
+  "name": "Inkwell — Private Handwritten Notes",
+  "short_name": "Inkwell",
+  "description": "Turn typed notes into natural handwritten pages entirely on your device.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3eee3",
+  "theme_color": "#173b32",
+  "icons": [{ "src": "./assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

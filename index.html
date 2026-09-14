@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="Turn typed notes into natural handwritten pages, privately in your browser.">
+  <title>Inkwell — private handwritten notes</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Inkwell home"><span class="brand-mark">I</span><span>Inkwell</span></a>
+    <div class="privacy-pill"><span aria-hidden="true">●</span> Local-only workspace</div>
+    <a class="github-link" href="https://github.com" target="_blank" rel="noreferrer">Open source ↗</a>
+  </header>
+
+  <main class="workspace">
+    <aside class="panel controls" aria-label="Note controls">
+      <div>
+        <p class="eyebrow">NOTE STUDIO</p>
+        <h1>Make typed notes<br>feel <em>truly yours.</em></h1>
+        <p class="intro">Natural variation, your own font, and print-ready pages. Nothing leaves this device.</p>
+      </div>
+
+      <label class="field text-field">
+        <span>Your notes <small id="char-count">0 characters</small></span>
+        <textarea id="note-input" maxlength="20000" spellcheck="true">The best ideas often begin as a rough note.
+
+Inkwell turns clean digital text into warm, imperfect pages — while keeping every word private on your device.
+
+Try changing the paper, ink, rhythm, or upload your own handwriting font.</textarea>
+      </label>
+
+      <div class="control-grid">
+        <label class="field"><span>Handwriting</span><select id="font"><option value="casual">Everyday</option><option value="cursive">Cursive</option><option value="neat">Neat notes</option><option value="journal">Journal</option></select></label>
+        <label class="field"><span>Paper</span><select id="paper-style"><option value="ruled">Ruled</option><option value="grid">Grid</option><option value="blank">Blank</option></select></label>
+        <label class="field"><span>Page size</span><select id="paper"><option value="a4">A4</option><option value="letter">US Letter</option><option value="a5">A5</option></select></label>
+        <label class="field"><span>Ink</span><span class="color-wrap"><input id="ink" type="color" value="#183a73"><output id="ink-value">#183a73</output></span></label>
+      </div>
+
+      <label class="field range-field"><span>Human variation <output id="variation-value">70%</output></span><input id="variation" type="range" min="0" max="1" value="0.7" step="0.05"></label>
+      <label class="field range-field"><span>Text size <output id="size-value">27px</output></span><input id="font-size" type="range" min="18" max="42" value="27"></label>
+
+      <div class="font-upload">
+        <div><strong>Use your handwriting</strong><small>Upload a local .ttf, .otf, or .woff file (max 2 MB).</small></div>
+        <label class="upload-button">Choose font<input id="font-upload" type="file" accept=".ttf,.otf,.woff,.woff2,font/ttf,font/otf,font/woff,font/woff2"></label>
+      </div>
+
+      <div class="actions">
+        <button id="download-svg" class="button primary">Download SVG</button>
+        <button id="download-png" class="button">Download PNG</button>
+        <button id="print" class="button icon-button" title="Print or save as PDF" aria-label="Print or save as PDF">⌘P</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Ready · no account required</p>
+    </aside>
+
+    <section class="preview-area" aria-label="Handwritten page preview">
+      <div class="preview-toolbar"><span id="page-count">1 page</span><button id="shuffle" class="shuffle">New variation ↻</button></div>
+      <div id="pages" class="pages"></div>
+    </section>
+  </main>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

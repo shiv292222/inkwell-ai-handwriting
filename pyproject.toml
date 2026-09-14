@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inkwell-ai-handwriting"
+version = "1.0.0"
+description = "Local, agent-native handwritten PDF, DOCX, and PNG generation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "Pillow>=10.4,<13",
+  "reportlab>=4.2,<5",
+  "python-docx>=1.1,<2",
+]
+
+[project.optional-dependencies]
+test = ["pypdf>=5,<7", "pytest>=8,<10"]
+
+[project.scripts]
+inkwell = "inkwell.cli:main"
+inkwell-mcp = "inkwell.mcp_server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+inkwell = ["fonts/*.ttf", "fonts/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

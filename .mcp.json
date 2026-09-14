@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "inkwell": {
+      "command": "node",
+      "args": ["mcp/launch.mjs"],
+      "cwd": "."
+    }
+  }
+}
